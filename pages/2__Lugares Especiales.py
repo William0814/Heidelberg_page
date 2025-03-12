@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.sidebar.header("Conoce Más")
+st.sidebar.header("Conoce Más...")
 st. title("Algunos Sitios :blue[Turisticos..]")
 st.divider()
 
