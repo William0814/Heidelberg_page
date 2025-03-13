@@ -9,13 +9,26 @@ st.write("""Tienes alguna sugerencia ? O tal vez quieres agregar algo no dudes e
 
 st.divider()
 
-name = st.text_input(label="Cual es tu nombre:")
-where = st.text_input("De donde eres:")
-select = st.selectbox("Que tal te parecio esta pagina:", ("Me gusto", "Me da igual", "No me gusto"),
-                       index=None, placeholder="Selecciona una respuesta..",)
-menssage = st.text_area("Comentarios:")
-st.write(f'Tu mensaje tiene {len(menssage)} carateres.')
+with st.form(key="form_comments"):
 
+    user_email = st.text_input("Cual es tu correo:")
+    functions.email_verfication(user_email)
 
-send = st.button("Enviar")
-functions.send_comments(send)
+    name = st.text_input(label="Cual es tu nombre:")
+    where = st.text_input("De donde eres:")
+    select = st.selectbox("Que tal te parecio esta pagina:", ("", "Me gusto", "Me da igual", "No me gusto"),
+                            placeholder="Selecciona una respuesta..",)
+    
+    message = st.text_area("Comentarios:")
+    message1 = f"""\
+Subject:  New message from {name}
+From: {user_email}
+Country: {where}
+Calification: {select}
+"""
+    st.write(f'Tu mensaje tiene {len(message)} carateres.')
+
+    button = st.form_submit_button("Enviar")
+    if button:
+        functions.send_form(message1)
+        functions.send_comments(button)

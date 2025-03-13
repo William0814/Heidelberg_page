@@ -1,5 +1,7 @@
 import streamlit as st
 import time
+import re
+import smtplib, ssl
 
 def tema(self):
     if self == "Infraestructura":
@@ -62,5 +64,26 @@ def not_menu():
 def send_comments(self):
       if self:
             with st.spinner("Enviando tu mensaje.."):
-                  time.sleep(3)
+                  time.sleep(5)
             st.write(f'Gracias Por tus comentarios', ":smile:")
+
+
+def email_verfication(email):
+      verification = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+      if re.match(verification, email):
+            st.write(f"Email valido!!")
+      else:
+            st.write(f"Por favor ingrese un Email valido..")
+
+# Function for send email of the form in the Feedback page.
+def send_form(message):
+    host = "smtp.gmail.com"
+    port = 465
+    username = "williammaster90@gmail.com"
+    passwor = "fwor tnjh glww iznc"
+    receiver = "williammaster90@gmail.com"
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL(host, port, context=context) as server:
+        server.login(username, passwor)
+        server.sendmail(username, receiver, message)
