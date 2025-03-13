@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 def tema(self):
     if self == "Infraestructura":
@@ -45,3 +46,21 @@ def tema(self):
                   Espero que esta información te proporcione una visión detallada de 
                   Heidelberg en cuanto a su economía, infraestructura, patrimonio cultural
                    y división administrativa.""")
+
+# Function for disguise the buttons from Streamlit server interface.       
+def not_menu():
+      hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
+      st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+# Function for send messages in Feedback page  
+def send_comments(self):
+      if self:
+            with st.spinner("Enviando tu mensaje.."):
+                  time.sleep(3)
+            st.write(f'Gracias Por tus comentarios', ":smile:")

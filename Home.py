@@ -3,9 +3,10 @@ import pandas as pd
 import numpy as np
 import functions
 
+st.set_page_config(page_title="Home", page_icon="icons/house.png")
+functions.not_menu()
 
 st.sidebar.header("Que es Heidelberg ?")
-st.sidebar.title("Menu")
 
 st. title("Ciudad de :blue[Heidelberg...]")
 st.divider()
@@ -45,14 +46,7 @@ st.divider()
 st.link_button(label="Mapa", url="https://www.google.de/maps/place/69123+Heidelberg/@49.4178422,8.5376347,12z/data=!3m1!4b1!4m6!3m5!1s0x4797c6fbb04d42bd:0x1c1ffd3ff5a4c640!8m2!3d49.4160136!4d8.6171786!16s%2Fg%2F1vlz99jd?entry=ttu&g_ep=EgoyMDI1MDMxMC4wIKXMDSoASAFQAw%3D%3D")
 
 
-hide_streamlit_style = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 
 
 

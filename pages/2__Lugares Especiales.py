@@ -1,5 +1,9 @@
 import streamlit as st
+import functions
 
+
+st.set_page_config(page_title="Lugares Especiales", page_icon="icons/circle.png")
+functions.not_menu()
 st.sidebar.header("Conoce Más...")
 st. title("Algunos Sitios :blue[Turisticos..]")
 st.divider()

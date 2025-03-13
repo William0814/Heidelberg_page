@@ -1,7 +1,9 @@
 import streamlit as st
+import functions
 
 
-st.set_page_config(page_title="Historia")
+st.set_page_config(page_title="Historia", page_icon="icons/parchment.png")
+functions.not_menu()
 st.sidebar.header("Historia que deberias conocer..")
 
 st.title("Origen de :blue[Heidelber..]")
