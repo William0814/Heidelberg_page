@@ -3,6 +3,7 @@ import time
 import re
 import smtplib, ssl
 
+
 def tema(self):
     if self == "Infraestructura":
          st.info("""Heidelberg está estratégicamente ubicada en el corazón de Europa,
@@ -49,6 +50,7 @@ def tema(self):
                   Heidelberg en cuanto a su economía, infraestructura, patrimonio cultural
                    y división administrativa.""")
 
+
 # Function for disguise the buttons from Streamlit server interface.       
 def not_menu():
       hide_streamlit_style = """
@@ -60,6 +62,7 @@ def not_menu():
         """
       st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+
 # Function for send messages in Feedback page  
 def send_comments(self):
       if self:
@@ -68,22 +71,25 @@ def send_comments(self):
             st.write(f'Gracias Por tus comentarios', ":smile:")
 
 
+ # Function for check the user email if is correct or no.     
 def email_verfication(email):
       verification = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
       if re.match(verification, email):
-            st.write(f"Email valido!!")
+            st.success(f"Email valido!!")
       else:
-            st.write(f"Por favor ingrese un Email valido..")
+            st.error(f"Por favor ingrese un Email valido..")
+
 
 # Function for send email of the form in the Feedback page.
 def send_form(message):
     host = "smtp.gmail.com"
     port = 465
-    username = "williammaster90@gmail.com"
-    passwor = "fwor tnjh glww iznc"
-    receiver = "williammaster90@gmail.com"
+    username = "correo.aplicaciones.ardit@gmail.com"
+    passwor = "cyjw awse agna egda"
+    receiver = "correo.aplicaciones.ardit@gmail.com"
     context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL(host, port, context=context) as server:
         server.login(username, passwor)
         server.sendmail(username, receiver, message)
+
