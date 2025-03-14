@@ -6,7 +6,7 @@ st.set_page_config(page_title="Historia", page_icon="icons/parchment.png")
 functions.not_menu()
 st.sidebar.header("Historia que deberias conocer..")
 
-st.title("Origen de :blue[Heidelber..]")
+st.title("Origen de :blue[Heidelberg..]")
 
 st.write(""" Aunque la primera mención oficial de Heidelberg data de 1196,
             la zona estuvo habitada desde tiempos de los celtas y romanos. 
