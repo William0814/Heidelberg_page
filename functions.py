@@ -2,6 +2,7 @@ import streamlit as st
 import time
 import re
 import smtplib, ssl
+import os
 
 
 def tema(self):
@@ -68,10 +69,10 @@ def send_comments(self):
       if self:
             with st.spinner("Enviando tu mensaje.."):
                   time.sleep(5)
-            st.write(f'Gracias Por tus comentarios', ":smile:")
+            st.info(f'Gracias Por tus comentarios', ":smile:")
 
 
- # Function for check the user email if is correct or no.     
+ # Function for checkin the user email if is correct or no.     
 def email_verfication(email):
       verification = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
       if re.match(verification, email):
