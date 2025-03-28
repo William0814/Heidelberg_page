@@ -69,7 +69,7 @@ def send_comments(self):
       if self:
             with st.spinner("Enviando tu mensaje.."):
                   time.sleep(5)
-            st.info(f'Gracias Por tus comentarios', ":smile:")
+                  st.info(f"Gracias Por tus comentarios :smile:")
 
 
  # Function for checkin the user email if is correct or no.     
